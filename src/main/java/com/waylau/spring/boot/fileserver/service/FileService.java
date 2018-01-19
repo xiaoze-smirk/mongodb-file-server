@@ -5,6 +5,8 @@ package com.waylau.spring.boot.fileserver.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import com.waylau.spring.boot.fileserver.domain.File;
 
 /**
@@ -42,4 +44,13 @@ public interface FileService {
 	 * @return
 	 */
 	List<File> listFilesByPage(int pageIndex, int pageSize);
+	
+	/**
+	 * 查询分页信息，按上传时间降序
+	 * @param pageIndex
+	 * @param pageSize
+	 * @return
+	 */
+	Page<File> pageInfo(int pageIndex, int pageSize);
+	
 }

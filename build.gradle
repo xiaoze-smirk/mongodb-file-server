@@ -55,10 +55,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
 	// 添加 Spring Data Mongodb 的依赖
-	compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	
-	// 添加  Embedded MongoDB 的依赖
-	compile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+	compile ('org.springframework.boot:spring-boot-starter-data-mongodb')
 
 	// 该依赖对于编译测试是必须的，默认包含编译产品依赖和编译时依
 	testCompile('org.springframework.boot:spring-boot-starter-test')

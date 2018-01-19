@@ -1,7 +1,6 @@
 package com.waylau.spring.boot.fileserver.domain;
 
 import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,8 +16,9 @@ public class File {
 	private String id;
     private String name; // 文件名称
     private String contentType; // 文件类型
-    private long size;
-    private Date uploadDate;
+	private long size;
+	private Date uploadDate;
+	private String uploadDateStr;
     private String md5;
     private byte[] content; // 文件内容
     private String path; // 文件路径
@@ -72,7 +72,6 @@ public class File {
 		this.size = size;
 	}
 
-
 	public Date getUploadDate() {
 		return uploadDate;
 	}
@@ -80,6 +79,18 @@ public class File {
 
 	public void setUploadDate(Date uploadDate) {
 		this.uploadDate = uploadDate;
+
+	}
+
+	public String getUploadDateStr() {
+		
+		return uploadDateStr;
+	}
+
+
+	public void setUploadDateStr(String uploadDateStr) {
+		
+		this.uploadDateStr = uploadDateStr;
 	}
 
 
@@ -142,7 +153,7 @@ public class File {
                 + "name='" + name + '\''
                 + ", contentType='" + contentType + '\''
                 + ", size=" + size
-                + ", uploadDate=" + uploadDate
+                + ", uploadDateStr=" + uploadDateStr
                 + ", md5='" + md5 + '\''
                 + ", id='" + id + '\''
                 + '}';

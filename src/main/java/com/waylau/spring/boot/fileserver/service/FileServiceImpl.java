@@ -52,4 +52,17 @@ public class FileServiceImpl implements FileService {
 		list = page.getContent();
 		return list;
 	}
+
+	@Override
+	public Page<File> pageInfo(int pageIndex, int pageSize) {
+		
+		Page<File> page = null;
+		
+		Sort sort = new Sort(Direction.DESC,"uploadDate"); 
+		Pageable pageable = new PageRequest(pageIndex-1, pageSize, sort);
+		
+		page = fileRepository.findAll(pageable);
+		return page;
+		
+	}
 }
