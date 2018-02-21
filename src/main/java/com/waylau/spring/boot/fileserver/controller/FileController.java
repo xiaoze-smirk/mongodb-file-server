@@ -185,10 +185,11 @@ public class FileController {
      */
     @PostMapping("/upload")
     @ResponseBody
-    public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file,
+                                        @RequestParam("fileName") String fileName) {
     	File returnFile = null;
         try {
-        	File f = new File(file.getOriginalFilename(),  file.getContentType(), file.getSize(),file.getBytes());
+        	File f = new File(fileName,  file.getContentType(), file.getSize(),file.getBytes());
         	f.setMd5( MD5Util.getMD5(file.getInputStream()) );
         	returnFile = fileService.saveFile(f);
         	String path = "//"+ serverAddress + ":" + serverPort + "/view/"+returnFile.getId();
