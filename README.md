@@ -40,7 +40,7 @@ It's so easy to start up the MongoDB File Server with 4 steps.
 ### 1. Get source
 
 ```shell
-$ git clone https://github.com/waylau/mongodb-file-server.git
+$ git clone https://github.com/xiaoze-smirk/mongodb-file-server.git
 ```
 
 ### 2. Modification
